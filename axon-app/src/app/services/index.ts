@@ -1,0 +1,1 @@
+export { ColorGeneratorService, ColorInterpolate } from './color-generator.service'
