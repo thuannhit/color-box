@@ -1,5 +1,5 @@
 import { ColorGeneratorService } from './color-generator.service'
-describe('MasterService without Angular testing support', () => {
+describe('ColorGeneratorService tests', () => {
     let colorGeneratorService: ColorGeneratorService;
 
     it('#generateColors should return the list of colors', () => {
