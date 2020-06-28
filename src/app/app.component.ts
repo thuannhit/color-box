@@ -37,12 +37,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
   dropItem(oEvent: CdkDragDrop<string[]>) {
     if (oEvent.previousContainer === oEvent.container) {
-      let oldtarget = oEvent.item.data[oEvent.previousIndex];
-      oEvent.item.data[oEvent.previousIndex] =
-        oEvent.item.data[oEvent.currentIndex];
-      oEvent.item.data[oEvent.currentIndex] = oldtarget;
-      // moveItemInArray(oEvent.container.data, oEvent.previousIndex, oEvent.currentIndex);
+
+      /*  Swap positions in same column */
+      // const oldtarget = this.groups[oEvent.container.id].items[oEvent.previousIndex]
+      // this.groups[oEvent.container.id].items[oEvent.previousIndex] =
+      //   this.groups[oEvent.container.id].items[oEvent.currentIndex]
+      // this.groups[oEvent.container.id].items[oEvent.currentIndex] = oldtarget
+
+      /*  Change position only in a column */
+      moveItemInArray(oEvent.container.data, oEvent.previousIndex, oEvent.currentIndex);
     } else {
+      /* Swap the position */
       transferArrayItem(
         oEvent.previousContainer.data,
         oEvent.container.data,
