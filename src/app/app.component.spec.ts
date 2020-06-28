@@ -46,10 +46,25 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('axon-app');
   });
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('axon-app app is running!');
-  // });
+  it('should render the input control', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.content span').textContent).toContain('Size of matrix, from 2 to 9');
+  });
+
+  it('should render the title of header: This demo version is using Angular', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.toolbar span').textContent).toContain('This demo version is using Angular');
+  });
+
+  it('should render the view button', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.content button').textContent).toContain('View');
+  });
+  
 });
