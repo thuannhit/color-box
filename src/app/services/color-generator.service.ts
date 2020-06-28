@@ -26,7 +26,7 @@ export class ColorGeneratorService {
             : colorStart + i * intervalSize;
     }
 
-    public generateColors(dataLength, colorScaleOption): string[] {
+    public generateColors(dataLength: number, colorScaleOption: string): string[] {
         const colorOption = ColorInterpolate.hasOwnProperty(colorScaleOption)
             ? colorScaleOption
             : 'Rainbow';
